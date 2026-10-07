@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendations & Job Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #3498db;
+            margin-bottom: 8px;
+        }
+        .ai-box {
+            background-color: #eef7fc;
+            border-left: 5px solid #3498db;
+            padding: 15px 20px;
+            border-radius: 6px;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a.back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            background-color: #7f8c8d;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        a.back-btn:hover {
+            background-color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <h2>Submitted Skills Analysis</h2>
+    <p><strong>Your Entered Skills:</strong> <code>{{ user_skills }}</code></p>
+    
+    <h3>AI Model Recommendation</h3>
+    <div class="ai-box">
+        {{ ai_response }}
+    </div>
+
+    <hr style="border: 0; height: 1px; background: #eee; margin: 30px 0;">
+
+    <h2>Matched Job Opportunities</h2>
+
+    {% if jobs %}
+    <table>
+        <thead>
+            <tr>
+                <th>Job ID</th>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Required Skills</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for job in jobs %}
+            <tr>
+                <td>{{ job.job_id }}</td>
+                <td><strong>{{ job.title }}</strong></td>
+                <td>{{ job.company }}</td>
+                <td>{{ job.required_skills }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No matching jobs found for the specified skills.</p>
+    {% endif %}
+
+    <a href="/" class="back-btn">← Back to Home</a>
+</body>
+</html>

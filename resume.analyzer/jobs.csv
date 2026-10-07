@@ -1,0 +1,11 @@
+job_id,title,company,required_skills
+101,C++ Systems Engineer,TechCorp,"c++, algorithms, data structures, git"
+102,Game Developer,Pixel Studios,"c++, c#, unreal engine, unity"
+103,.NET Software Engineer,Enterprise Solutions,"c#, .net, sql server, c++"
+104,Embedded Systems Developer,AutoTech,"c, c++, microcontrollers, RTOS"
+105,Frontend Web Developer,WebCraft,"html, css, javascript, react"
+106,Full Stack Developer,Cloud Apps,"javascript, html, css, node.js, python"
+107,Backend Engineer,Data Analytics,"python, flask, mysql, sql"
+108,Desktop Application Developer,AppCore,"c#, .net, wpf, c++"
+109,Low-Level Software Engineer,Kernel Systems,"c, assembly, linux, c++"
+110,UI/UX Web Engineer,Design Hub,"html, css, javascript, figma"
